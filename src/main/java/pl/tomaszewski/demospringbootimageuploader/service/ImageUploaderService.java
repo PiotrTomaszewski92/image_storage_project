@@ -19,9 +19,11 @@ public class ImageUploaderService {
         this.cloudinary = new Cloudinary(CloudinaryConfig.getConfigMap());
     }
 
-    public void uploadImage(String filePath) throws IOException {
+    public String uploadImage(String filePath) throws IOException {
             //"/Users/tomaszewski/Downloads/photo.jpg"
         File file = new File(filePath);
         Map uploadResult = cloudinary.uploader().upload(file, ObjectUtils.emptyMap());
+
+        return uploadResult.get("url").toString();
     }
 }
