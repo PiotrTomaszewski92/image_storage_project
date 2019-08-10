@@ -6,6 +6,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.tomaszewski.demospringbootimageuploader.model.User;
 import pl.tomaszewski.demospringbootimageuploader.repository.UserRepo;
@@ -25,9 +26,4 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         return userRepo.findByUserName(s);
     }
 
-    @EventListener(ApplicationReadyEvent.class)
-    public void addUserToDb(){
-        User user = new User("Jan","jan123".toCharArray(),"user");
-        userRepo.save(user);
-    }
 }
