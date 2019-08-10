@@ -9,7 +9,7 @@ import pl.tomaszewski.demospringbootimageuploader.service.ImageUploaderService;
 
 import java.io.IOException;
 
-@Route("/uploadImage")
+@Route("uploadImage")
 public class UploadGui extends VerticalLayout {
 
     ImageUploaderService imageUploaderService;
