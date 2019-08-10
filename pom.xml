@@ -52,6 +52,11 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.cloudinary</groupId>
+            <artifactId>cloudinary-core</artifactId>
+            <version>1.22.1</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
