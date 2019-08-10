@@ -48,7 +48,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @EventListener(ApplicationReadyEvent.class)
     public void addUserToDb(){
-        User user = new User("Jan",passwordEncoder().encode("jan123").toCharArray(),"user");
+        User user = new User("user",passwordEncoder().encode("user").toCharArray(),"ROLE_USER");
+        User admin = new User("admin",passwordEncoder().encode("admin").toCharArray(),"ROLE_ADMIN");
         userRepo.save(user);
+        userRepo.save(admin);
     }
 }
